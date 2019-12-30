@@ -1,0 +1,82 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    io.rancher.scheduler.affinity:host_label: RANCHER_HOST_TYPE=NODE
+    kompose.cmd: kompose convert
+    kompose.version: 1.16.0 (0c01309)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: chrome
+  name: chrome
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: chrome
+    spec:
+      containers:
+      - args:
+        - -c
+        - entry.sh
+        command:
+        - /bin/bash
+        env:
+        - name: CHROME
+          value: "true"
+        - name: FIREFOX
+          value: "false"
+        - name: GRID
+          value: "false"
+        - name: LANGUAGE
+          value: zh_Hans.UTF-8
+        - name: MAX_INSTANCES
+          value: "4"
+        - name: MAX_SESSIONS
+          value: "4"
+        - name: PICK_ALL_RANDOM_PORTS
+          value: "true"
+        - name: PULL_SELENIUM_IMAGE
+          value: "true"
+        - name: SCREEN_HEIGHT
+          value: "1080"
+        - name: SCREEN_WIDTH
+          value: "1920"
+        - name: SELENIUM_CONTAINER_LABELS
+          value: io.rancher.container.network=true
+        - name: SELENIUM_HUB_HOST
+          value: hub
+        - name: SELENIUM_HUB_PORT
+          value: "4444"
+        - name: SELENIUM_NODE_HOST
+          value: '{{`{{CONTAINER_IP}}`}}'
+        - name: SELENIUM_WAIT_FOR_CONTAINER
+          value: "true"
+        - name: TZ
+          value: Asia/Shanghai
+        - name: VIDEO
+          value: "false"
+        image: elgalu/selenium
+        name: chrome
+        resources: {}
+        securityContext:
+          privileged: true
+        tty: true
+        volumeMounts:
+        - mountPath: /dev/shm
+          name: chrome-claim0
+        - mountPath: /selenium
+          name: chrome-claim1
+      restartPolicy: Always
+      volumes:
+      - name: chrome-claim0
+        persistentVolumeClaim:
+          claimName: chrome-claim0
+      - name: chrome-claim1
+        persistentVolumeClaim:
+          claimName: chrome-claim1
+status: {}
