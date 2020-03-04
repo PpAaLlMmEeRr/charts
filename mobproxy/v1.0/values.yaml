@@ -16,6 +16,11 @@ global:
   ## Specifying secret at a chart level will override the global option
   imagePullSecrets:
 
+browsermobproxy:
+  image: "qautomatron/docker-browsermob-proxy"
+  tag: "latest"
+  pullPolicy: "IfNotPresent"
+
 hub:
   ## The repository and image
   ## ref: https://hub.docker.com/r/selenium/hub/
