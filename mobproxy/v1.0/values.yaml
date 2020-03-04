@@ -16,8 +16,6 @@ global:
   ## Specifying secret at a chart level will override the global option
   imagePullSecrets:
 
-
-
 hub:
   ## The repository and image
   ## ref: https://hub.docker.com/r/selenium/hub/
