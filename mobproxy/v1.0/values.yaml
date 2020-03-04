@@ -19,7 +19,15 @@ global:
 browsermobproxy:
   image: "qautomatron/docker-browsermob-proxy"
   tag: "latest"
+  serviceType: "LoadBalancer"
   pullPolicy: "IfNotPresent"
+  ## The port which the mobbrowserproxy listens on
+  port: 9090
+
+  ## The port the service listens on
+  servicePort: 9090
+  
+  loadBalancerSourceRanges: []
 
 hub:
   ## The repository and image
