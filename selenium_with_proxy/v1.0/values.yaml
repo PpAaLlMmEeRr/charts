@@ -16,9 +16,7 @@ global:
   ## Specifying secret at a chart level will override the global option
   imagePullSecrets:
 
-browsermobproxy:
-  image: "qautomatron/docker-browsermob-proxy"
-  pullPolicy: "IfNotPresent"
+
 
 hub:
   ## The repository and image
