@@ -185,7 +185,7 @@ chrome:
   pullPolicy: "IfNotPresent"
 
   ## The number of pods in the deployment
-  replicas: 1
+  replicas: 8
 
   ## Configure annotations on the chrome pods
   podAnnotations: {}
