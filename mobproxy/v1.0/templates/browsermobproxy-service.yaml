@@ -1,0 +1,44 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -c
+    kompose.version: 1.1.0 (36652f6)
+  creationTimestamp: null
+  labels:
+    app: browsermobproxy
+    chart: browsermobproxy
+  name: browsermobproxy
+spec:
+  ports:
+  - name: "9090"
+    port: 9090
+    targetPort: 9090
+  - name: "39500"
+    port: 39500
+    targetPort: 39500
+  - name: "39501"
+    port: 39501
+    targetPort: 39501
+  - name: "39502"
+    port: 39502
+    targetPort: 39502
+  - name: "39503"
+    port: 39503
+    targetPort: 39503
+  - name: "39504"
+    port: 39504
+    targetPort: 39504
+  - name: "39505"
+    port: 39505
+    targetPort: 39505
+  - name: "39506"
+    port: 39506
+    targetPort: 39506
+  - name: "39507"
+    port: 39507
+    targetPort: 39507
+  selector:
+    app: browsermobproxy
+status:
+  loadBalancer: {}
