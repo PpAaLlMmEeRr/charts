@@ -6,7 +6,7 @@ metadata:
     kompose.version: 1.1.0 (36652f6)
   creationTimestamp: null
   labels:
-    io.kompose.service: browsermobproxy
+    chart: browsermobproxy
   name: browsermobproxy
 spec:
   replicas: 1
@@ -15,7 +15,7 @@ spec:
     metadata:
       creationTimestamp: null
       labels:
-        io.kompose.service: browsermobproxy
+        chart: browsermobproxy
     spec:
       containers:
       - env:
