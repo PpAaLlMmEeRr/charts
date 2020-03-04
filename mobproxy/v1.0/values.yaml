@@ -22,10 +22,10 @@ browsermobproxy:
   serviceType: "LoadBalancer"
   pullPolicy: "IfNotPresent"
   ## The port which the mobbrowserproxy listens on
-  port: 9090
+  port: 4445
 
   ## The port the service listens on
-  servicePort: 9090
+  servicePort: 4445
   
   loadBalancerSourceRanges: []
   serviceSessionAffinity: "None"
