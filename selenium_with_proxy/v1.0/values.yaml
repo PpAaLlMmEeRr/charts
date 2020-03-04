@@ -17,7 +17,7 @@ global:
   imagePullSecrets:
 
 browsermobproxy:
-  image: "selenium/hub"
+  image: "qautomatron/docker-browsermob-proxy"
   pullPolicy: "IfNotPresent"
 
 hub:
