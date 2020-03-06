@@ -488,7 +488,7 @@ zookeeper:
     PullPolicy: "IfNotPresent"
 
   ## If the Zookeeper Chart is disabled a URL and port are required to connect
-  url: "http://10.1.2.212"
+  url: "10.1.2.212"
   port: 2181
 
   ## Pod scheduling preferences (by default keep pods within a release on separate nodes).
