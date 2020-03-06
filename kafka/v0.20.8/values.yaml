@@ -139,7 +139,7 @@ headless:
 external:
   enabled: false
   # type can be either NodePort or LoadBalancer
-  type: NodePort
+  type: LoadBalancer
   # annotations:
   #  service.beta.kubernetes.io/openstack-internal-load-balancer: "true"
   dns:
@@ -148,7 +148,7 @@ external:
   # If using external service type LoadBalancer and external dns, set distinct to true below.
   # This creates an A record for each statefulset pod/broker. You should then map the
   # A record of the broker to the EXTERNAL IP given by the LoadBalancer in your DNS server.
-  distinct: false
+  distinct: true
   servicePort: 19092
   firstListenerPort: 31090
   domain: cluster.local
@@ -190,10 +190,11 @@ configurationOverrides:
   ## If external service type is Nodeport:
   # "advertised.listeners": |-
   #   EXTERNAL://kafka.cluster.local:$((31090 + ${KAFKA_BROKER_ID}))
-  "advertised.listeners": EXTERNAL://kafka.cluster.local:$((31090 + ${KAFKA_BROKER_ID}))
+  #"advertised.listeners": EXTERNAL://kafka.cluster.local:$((31090 + ${KAFKA_BROKER_ID}))
   ## If external service type is LoadBalancer and distinct is true:
   # "advertised.listeners": |-
   #   EXTERNAL://kafka-$((${KAFKA_BROKER_ID})).cluster.local:19092
+  "advertised.listeners": EXTERNAL://kafka-$((${KAFKA_BROKER_ID})).cluster.local:19092
   ## If external service type is LoadBalancer and distinct is false:
   # "advertised.listeners": |-
   #   EXTERNAL://${LOAD_BALANCER_IP}:31090
