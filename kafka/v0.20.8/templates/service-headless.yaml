@@ -17,5 +17,6 @@ spec:
     targetPort: {{ .Values.headless.targetPort }}
 {{- end }}
   clusterIP: None
+  type: LoadBalancer
   selector:
   {{- include "kafka.broker.matchLabels" . | nindent 4 }}
