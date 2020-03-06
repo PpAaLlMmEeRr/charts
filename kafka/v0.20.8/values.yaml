@@ -195,7 +195,7 @@ configurationOverrides:
   # "advertised.listeners": |-
   #   EXTERNAL://kafka-$((${KAFKA_BROKER_ID})).cluster.local:19092
   #"advertised.listeners": EXTERNAL://kafka-$((${KAFKA_BROKER_ID})).cluster.local:19092
-  "advertised.listeners": PLAINTEXT://10.1.2.212:9092
+  "advertised.listeners": PLAINTEXT://10.1.2.212:31090
   ## If external service type is LoadBalancer and distinct is false:
   # "advertised.listeners": |-
   #   EXTERNAL://${LOAD_BALANCER_IP}:31090
