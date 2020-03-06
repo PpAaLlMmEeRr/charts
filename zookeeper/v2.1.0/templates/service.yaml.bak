@@ -15,7 +15,6 @@ metadata:
 {{- end }}
 spec:
   type: {{ .Values.service.type }}
-  type: LoadBalancer
   ports:
   {{- range $key, $value := .Values.service.ports }}
     - name: {{ $key }}
