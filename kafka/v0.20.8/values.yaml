@@ -201,7 +201,7 @@ configurationOverrides:
   ## Uncomment to define the EXTERNAL Listener protocol
   # "listener.security.protocol.map": |-
   #   PLAINTEXT:PLAINTEXT,EXTERNAL:PLAINTEXT
-  "listener.security.protocol.map": PLAINTEXT:PLAINTEXT
+  "listener.security.protocol.map": EXTERNAL:PLAINTEXT
 
 ## set extra ENVs
 #   key: "value"
