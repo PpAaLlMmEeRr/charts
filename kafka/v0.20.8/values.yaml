@@ -137,7 +137,7 @@ headless:
 ## External access.
 ##
 external:
-  enabled: false
+  enabled: true
   # type can be either NodePort or LoadBalancer
   type: NodePort
   # annotations:
@@ -188,8 +188,7 @@ configurationOverrides:
   ##
   ## Setting "advertised.listeners" here appends to "PLAINTEXT://${POD_IP}:9092,", ensure you update the domain
   ## If external service type is Nodeport:
-  # "advertised.listeners": |-
-  #   EXTERNAL://kafka.cluster.local:$((31090 + ${KAFKA_BROKER_ID}))
+  "advertised.listeners": EXTERNAL://kafka.cluster.local:$((31090 + ${KAFKA_BROKER_ID}))
   ## If external service type is LoadBalancer and distinct is true:
   # "advertised.listeners": |-
   #   EXTERNAL://kafka-$((${KAFKA_BROKER_ID})).cluster.local:19092
@@ -466,7 +465,7 @@ topics: []
 zookeeper:
   ## If true, install the Zookeeper chart alongside Kafka
   ## ref: https://github.com/kubernetes/charts/tree/master/incubator/zookeeper
-  enabled: true
+  enabled: false
 
   ## Configure Zookeeper resource requests and limits
   ## ref: http://kubernetes.io/docs/user-guide/compute-resources/
@@ -488,7 +487,7 @@ zookeeper:
     PullPolicy: "IfNotPresent"
 
   ## If the Zookeeper Chart is disabled a URL and port are required to connect
-  url: ""
+  url: "10.1.2.212"
   port: 2181
 
   ## Pod scheduling preferences (by default keep pods within a release on separate nodes).
