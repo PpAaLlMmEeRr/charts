@@ -45,7 +45,7 @@ spec:
         - mountPath: /kafka/kafka-logs
           name: kafka2-claim0
       nodeSelector:
-        kubernetes.io/hostname: {{ .Values.kafka2.rancherLabel }}
+        k3s.io/internal-ip: {{ .Values.kafka2.kafkaBrokerip }}
       restartPolicy: Always
       volumes:
       - name: kafka2-claim0
