@@ -21,7 +21,7 @@ spec:
       containers:
       - env:
         - name: KAFKA_ADVERTISED_HOST_NAME
-          value: 10.1.2.212
+          value: {{ .Values.kafkaBrokerIp }}
         - name: KAFKA_ADVERTISED_LISTENERS
           value: PLAINTEXT://10.1.2.212:9092
         - name: KAFKA_DELETE_TOPIC_ENABLE
