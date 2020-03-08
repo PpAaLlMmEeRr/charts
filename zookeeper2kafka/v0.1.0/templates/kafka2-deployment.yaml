@@ -19,7 +19,7 @@ spec:
         app: kafka2
     spec:
       nodeSelector:
-        kafkaserver: true
+        servertype: kafka
       containers:
       - env:
         - name: KAFKA_ADVERTISED_HOST_NAME
