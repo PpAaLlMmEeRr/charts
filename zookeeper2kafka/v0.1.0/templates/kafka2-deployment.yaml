@@ -23,7 +23,7 @@ spec:
         - name: KAFKA_ADVERTISED_HOST_NAME
           value: {{ .Values.kafkaBroker.ip | quote }}
         - name: KAFKA_ADVERTISED_LISTENERS
-          value: PLAINTEXT://{{ .Values.kafkaBroker.ip }}:9092
+          value: PLAINTEXT://10.1.2.212:9092
         - name: KAFKA_DELETE_TOPIC_ENABLE
           value: "true"
         - name: KAFKA_LISTENERS
