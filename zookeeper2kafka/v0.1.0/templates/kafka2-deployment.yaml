@@ -19,7 +19,7 @@ spec:
         app: kafka2
     spec:
       nodeSelector:
-        k3s.io/hostname: {{ .Values.kafkaNodeLabel }}
+        k3s.io/hostname: k3sn2
       containers:
       - env:
         - name: KAFKA_ADVERTISED_HOST_NAME
