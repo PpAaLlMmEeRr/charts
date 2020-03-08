@@ -21,7 +21,7 @@ spec:
       containers:
       - env:
         - name: KAFKA_ADVERTISED_HOST_NAME
-          value: "{{ .Values.kafka.kafkaip }}"
+          value: {{ .Values.kafka.kafkaip }}
         - name: KAFKA_ADVERTISED_LISTENERS
           value: PLAINTEXT://{{ .Values.kafka.kafkaip }}:9092
         - name: KAFKA_DELETE_TOPIC_ENABLE
