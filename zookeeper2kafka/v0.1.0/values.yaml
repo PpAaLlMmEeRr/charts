@@ -31,3 +31,4 @@ kafka2:
     ## The kafka image repository
     image: "wurstmeister/kafka:2.11-0.10.2.2"
     pullPolicy: IfNotPresent
+    kafkaBrokerip: "10.1.2.212"
