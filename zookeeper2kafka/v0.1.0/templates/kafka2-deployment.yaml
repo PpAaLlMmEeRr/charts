@@ -21,9 +21,9 @@ spec:
       containers:
       - env:
         - name: KAFKA_ADVERTISED_HOST_NAME
-          value: {{ .Values.kafkaBrokerIp }}
+          value: {{ .Values.kafka2.kafkaBrokerIp }}
         - name: KAFKA_ADVERTISED_LISTENERS
-          value: PLAINTEXT://{{ .Values.kafkaBrokerIp }}:9092
+          value: PLAINTEXT://{{ .Values.kafka2.kafkaBrokerIp }}:9092
         - name: KAFKA_DELETE_TOPIC_ENABLE
           value: "true"
         - name: KAFKA_LISTENERS
