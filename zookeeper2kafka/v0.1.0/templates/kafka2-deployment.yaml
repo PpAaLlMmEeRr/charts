@@ -18,12 +18,14 @@ spec:
       labels:
         app: kafka2
     spec:
+      nodeSelector:
+        k3s.io/hostname: {{ .Values.kafkaNodeLabel }}
       containers:
       - env:
         - name: KAFKA_ADVERTISED_HOST_NAME
           value: {{ .Values.kafkaBrokerHost }}
         - name: KAFKA_ADVERTISED_LISTENERS
-          value: PLAINTEXT://10.1.2.212:9092
+          value: PLAINTEXT://{{ .Values.kafkaBrokerHost }}:9092
         - name: KAFKA_DELETE_TOPIC_ENABLE
           value: "true"
         - name: KAFKA_LISTENERS
