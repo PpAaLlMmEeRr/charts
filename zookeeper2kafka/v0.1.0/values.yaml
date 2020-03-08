@@ -32,3 +32,4 @@ kafka2:
     image: "wurstmeister/kafka:2.11-0.10.2.2"
     pullPolicy: IfNotPresent
     kafkaBrokerip: "10.1.2.212"
+    rancherLabel: "rancher2"
