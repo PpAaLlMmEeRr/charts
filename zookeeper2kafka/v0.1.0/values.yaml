@@ -1,0 +1,33 @@
+# Default values for zookeeper2kafka.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+global:
+  ## NodeSelector to be used in every deployment
+  ## hub, chrome, firefox, chromeDebug and firefoxDebug
+  ## can also be specified at chart level see below
+  nodeSelector:
+  #  label: value
+  ## Configure HostAliases
+  hostAliases: []
+  affinity:
+  #  label: value
+  tolerations:
+  #  label: value
+  ## imagePullSecrets is the secret to use to pull the image from in case of a private flavour image
+  ## to be used in every deployment hub, chrome, firefox, chromeDebug and firefoxDebug
+  ## can also be specified at chart level see below.
+  ## Specifying secret at a chart level will override the global option
+  imagePullSecrets:
+
+zookeeper:
+    replicaCount: 1
+    ## The kafka image repository
+    image: "wurstmeister/zookeeper"
+    pullPolicy: IfNotPresent
+
+kafka2:
+    replicaCount: 1
+    ## The kafka image repository
+    image: "wurstmeister/kafka:2.11-0.10.2.2"
+    pullPolicy: IfNotPresent

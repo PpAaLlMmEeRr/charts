@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.1.0 (36652f6)
+  creationTimestamp: null
+  name: zookeeper
+spec:
+  replicas: 1
+  strategy: {}
+  selector:
+    matchLabels:
+      app: zookeeper
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+          app: zookeeper
+    spec:
+      containers:
+      - image: wurstmeister/zookeeper
+        name: zookeeper
+        ports:
+        - containerPort: 2181
+        resources: {}
+        securityContext:
+          privileged: true
+      restartPolicy: Always
+status: {}
