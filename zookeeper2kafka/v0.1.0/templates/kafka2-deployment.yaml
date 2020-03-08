@@ -47,6 +47,6 @@ spec:
       restartPolicy: Always
       volumes:
       - name: kafka2-claim0
-        persistentVolumeClaim:
-          claimName: kafka2-claim0
+        hostPath:
+          path: /opt/kafka/kafka2.11
 status: {}
