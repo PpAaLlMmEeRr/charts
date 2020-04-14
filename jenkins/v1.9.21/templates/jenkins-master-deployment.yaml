@@ -113,6 +113,8 @@ spec:
                   key: jenkins-admin-user
             - name: JENKINS_UC
               value: "https://mirrors.tuna.tsinghua.edu.cn"
+            - name: JENKINS_UC_EXPERIMENTAL
+              value: "https://mirrors.tuna.tsinghua.edu.cn/experimental"
             {{- end }}
             {{- if .Values.master.initContainerEnv }}
 {{ toYaml .Values.master.initContainerEnv | indent 12 }}
