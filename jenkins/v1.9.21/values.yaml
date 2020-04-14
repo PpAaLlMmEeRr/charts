@@ -171,7 +171,7 @@ master:
     - JNLP2-connect
   csrf:
     defaultCrumbIssuer:
-      enabled: true
+      enabled: false
       proxyCompatability: true
   cli: false
   # Kubernetes service type for the JNLP agent service
