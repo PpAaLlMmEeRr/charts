@@ -112,10 +112,7 @@ spec:
                   name: {{ template "jenkins.fullname" . }}
                   key: jenkins-admin-user
             - name: JENKINS_UC
-              valueFrom:
-                secretKeyRef:
-                  name: {{ template "jenkins.fullname" . }}
-                  key: "https://mirrors.tuna.tsinghua.edu.cn"
+              value: "https://mirrors.tuna.tsinghua.edu.cn"
             {{- end }}
             {{- if .Values.master.initContainerEnv }}
 {{ toYaml .Values.master.initContainerEnv | indent 12 }}
