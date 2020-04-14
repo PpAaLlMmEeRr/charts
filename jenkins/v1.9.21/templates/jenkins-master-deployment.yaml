@@ -112,9 +112,9 @@ spec:
                   name: {{ template "jenkins.fullname" . }}
                   key: jenkins-admin-user
             - name: JENKINS_UC
-              value: "https://updates.jenkins-ci.org"
+              value: "http://mirrors.jenkins-ci.org/updates/"
             - name: JENKINS_UC_EXPERIMENTAL
-              value: "https://updates.jenkins-ci.org/experimental"
+              value: "http://mirrors.jenkins-ci.org/updates/experimental"
             {{- end }}
             {{- if .Values.master.initContainerEnv }}
 {{ toYaml .Values.master.initContainerEnv | indent 12 }}
