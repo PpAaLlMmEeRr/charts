@@ -172,7 +172,7 @@ master:
   csrf:
     defaultCrumbIssuer:
       enabled: false
-      proxyCompatability: true
+      proxyCompatability: false
   cli: false
   # Kubernetes service type for the JNLP agent service
   # slaveListenerServiceType is the Kubernetes Service type for the JNLP agent service,
